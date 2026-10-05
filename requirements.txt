@@ -1,0 +1,16 @@
+# Synthetic Data ETL & Classification
+# Python 3.12. Install with: python -m pip install -r requirements.txt
+
+# PyTorch CUDA builds are hosted on PyTorch's own index, not PyPI.
+--extra-index-url https://download.pytorch.org/whl/cu130
+
+# --- ML ---
+torch==2.14.1+cu130
+numpy==2.5.3
+
+# --- LLM generation ---
+openai==3.24.0
+python-dotenv==1.2.4
+
+# --- Database ---
+psycopg[binary]==3.3.6
