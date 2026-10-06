@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy | Clause Classifier</title>
+    <meta name="description" content="What the Clause Classifier demo does with the text you submit: it is classified in memory and not stored." />
+    <meta name="theme-color" content="#f3f4f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121413" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/src/styles/base.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="site-name" href="/">Clause Classifier</a>
+        <a href="https://github.com/variable25/Synthetic-ETL-Pipeline-For-Legal_Clauses">GitHub</a>
+      </div>
+    </header>
+
+    <main class="container prose">
+      <h1>Privacy</h1>
+      <p class="meta">Last updated 6 October 2026</p>
+
+      <h2>Who runs this site</h2>
+      <p>This is a personal, non-commercial demo project run by Abhishek Kalakbandi Sridhar. Contact: sridharabhishek7@gmail.com.</p>
+
+      <h2>The text you classify</h2>
+      <p>When you press Classify, your clause is sent to the server, classified in memory by the model, and the result is sent back. The text is not written to a database, a file or the logs, and it is not used to train the model.</p>
+
+      <h2>Server logs</h2>
+      <p>The site runs on Google Cloud Run in Frankfurt (europe-west3). Like any web server, it records basic request data: IP address, time, requested path, browser user agent and response status. For each classification the app also logs the predicted label, the text length and the response time, never the text itself. Google Cloud deletes these logs after 30 days. Google processes this data on our behalf under its Cloud Data Processing Addendum.</p>
+      <p>The legal basis is our legitimate interest in running the site securely and knowing whether it works (Art. 6(1)(f) GDPR).</p>
+
+      <h2>Cookies and tracking</h2>
+      <p>This site sets no cookies, uses no browser storage and loads no third-party scripts or fonts. That is why there is no cookie banner.</p>
+
+      <h2>Your rights</h2>
+      <p>You can ask for access to, correction or deletion of data about you, and object to its processing, by writing to the contact above. You can also complain to a data protection supervisory authority.</p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="https://github.com/variable25/Synthetic-ETL-Pipeline-For-Legal_Clauses">Source code</a>
+      </div>
+    </footer>
+  </body>
+</html>
