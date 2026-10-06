@@ -8,6 +8,8 @@ Run locally from the project root with:  uvicorn serve.app:app --reload
 """
 
 import os
+import json
+import time
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Annotated
@@ -51,6 +53,12 @@ def rank_scores(labels: list[str], probs: list[float]) -> list[LabelScore]:
     scores = [LabelScore(label=label, score=p) for label, p in zip(labels, probs, strict=True)]
     return sorted(scores, key=lambda s: s.score, reverse=True)
 
+def log_classification(label: str, chars: int, truncated: bool, latency_ms: float) -> None:
+    """One JSON line per request; Cloud Run turns it into a structured log. Never logs the text."""
+    print(json.dumps({"severity": "INFO", "message": "classified", "label": label,
+                      "chars": chars, "truncated": truncated,
+                      "latency_ms": round(latency_ms, 1)}), flush=True)
+
 
 # --- 3. The model ---------------------------------------------------------------------
 class Classifier:
@@ -92,8 +100,10 @@ def create_app(classifier=None) -> FastAPI:
     @app.post("/api/classify", response_model=ClassifyResponse)
     def classify(request: ClassifyRequest) -> ClassifyResponse:
         model = app.state.classifier
+        start = time.perf_counter()
         probs, truncated = model.classify(request.text)
         scores = rank_scores(model.labels, probs)
+        log_classification(scores[0].label, len(request.text), truncated,(time.perf_counter() - start) * 1000)
         return ClassifyResponse(label=scores[0].label, scores=scores, truncated=truncated)
 
     if STATIC_DIR.exists():     # the built React app, once it exists (step 4.2)
