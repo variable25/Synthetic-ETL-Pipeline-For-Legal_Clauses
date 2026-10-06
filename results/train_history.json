@@ -1,0 +1,59 @@
+{
+  "model": "nlpaueb/legal-bert-base-uncased",
+  "best_val_loss": 0.0008789267048996408,
+  "hyperparameters": {
+    "max_tokens": 512,
+    "batch_size": 16,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "warmup_fraction": 0.1,
+    "max_epochs": 8,
+    "patience": 2,
+    "min_delta": 0.001,
+    "seed": 42
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.9329005124276144,
+      "val_loss": 0.008649089111713693,
+      "val_macro_f1": 1.0,
+      "seconds": 34
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.013718288952255981,
+      "val_loss": 0.006865945731988177,
+      "val_macro_f1": 0.9980314960629921,
+      "seconds": 34
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.004184952760605436,
+      "val_loss": 0.01116506551989005,
+      "val_macro_f1": 0.9960782518464262,
+      "seconds": 33
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.0014703585872459307,
+      "val_loss": 0.0008789267048996408,
+      "val_macro_f1": 1.0,
+      "seconds": 34
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.0010530802884890715,
+      "val_loss": 0.0006639656021434348,
+      "val_macro_f1": 1.0,
+      "seconds": 34
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.0008547210822845891,
+      "val_loss": 0.0005493543358170427,
+      "val_macro_f1": 1.0,
+      "seconds": 33
+    }
+  ]
+}
