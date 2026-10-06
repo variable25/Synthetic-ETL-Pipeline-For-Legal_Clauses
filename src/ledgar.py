@@ -16,7 +16,6 @@ from datasets import load_dataset
 
 from src.validate import normalize_text
 from src import config
-from src.validate import normalize_text
 
 DATASET_ID = "coastalcph/lex_glue"
 DATASET_CONFIG = "ledgar"
