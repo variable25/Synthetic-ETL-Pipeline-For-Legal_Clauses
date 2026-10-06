@@ -6,6 +6,7 @@ Every other module imports its settings from here.
 """
 
 import os
+from pathlib import Path
 from urllib.parse import quote_plus
 
 from dotenv import load_dotenv
@@ -95,3 +96,15 @@ MAX_RETRIES = 5             # SDK retries on rate limits / server errors, with b
 PRICE_INPUT_PER_1M_USD = 0.15
 PRICE_OUTPUT_PER_1M_USD = 0.60
 USD_TO_EUR = 1.0            # deliberately conservative: overestimates EUR cost
+
+# --- 8. File locations (absolute, so scripts work from any folder) ---------------
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = PROJECT_ROOT / "data"
+RESULTS_DIR = PROJECT_ROOT / "results"
+LEDGAR_TEST_PATH = DATA_DIR / "ledgar_test.jsonl"
+SYNTHETIC_TRAIN_PATH = DATA_DIR / "synthetic_train.jsonl"
+SYNTHETIC_VAL_PATH = DATA_DIR / "synthetic_val.jsonl"
+
+
+# --- 9. Train/validation split -------------------------------------------------------
+VAL_FRACTION = 0.1          # share of synthetic data held back to decide when training stops
