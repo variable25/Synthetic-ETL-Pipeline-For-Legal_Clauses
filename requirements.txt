@@ -17,3 +17,6 @@ psycopg[binary]==3.3.6
 
 # --- Testing ---
 pytest==9.1.1
+
+# --- Evaluation data ---
+datasets==5.1.0
