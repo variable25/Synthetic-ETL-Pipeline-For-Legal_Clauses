@@ -2,20 +2,20 @@
 Real evaluation data: the LEDGAR test split, filtered to our 8 labels.
 
 LEDGAR (part of the LexGLUE benchmark) holds clauses from real SEC contracts,
-labelled by humans. It is used ONLY for the final evaluation, never for
-training or tuning, so the "no hand labels" claim stays true.
+labelled by the section headings their drafters wrote. It is used ONLY for
+the final evaluation, never for training or tuning, so the "no hand labels"
+claim stays true.
 
 Run from the project root with:  python -m src.ledgar
 """
 
-import json
 from collections import Counter
-from pathlib import Path
 
 from datasets import load_dataset
 
-from src.validate import normalize_text
 from src import config
+from src.jsonl_io import write_jsonl
+from src.validate import normalize_text
 
 DATASET_ID = "coastalcph/lex_glue"
 DATASET_CONFIG = "ledgar"
@@ -55,15 +55,7 @@ def filter_and_map(texts: list[str], label_ids: list[int],
     return rows
 
 
-# --- 3. Output ------------------------------------------------------------------------
-def write_jsonl(rows: list[dict], path: Path) -> None:
-    """Write one JSON object per line, creating the folder if needed."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8") as f:
-        for row in rows:
-            f.write(json.dumps(row, ensure_ascii=False) + "\n")
-
-
+# --- 3. Entry point -------------------------------------------------------------------
 def main() -> None:
     split = load_dataset(DATASET_ID, DATASET_CONFIG, split=SPLIT)
     ledgar_names = split.features["label"].names

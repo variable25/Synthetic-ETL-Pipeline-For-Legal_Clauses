@@ -6,6 +6,7 @@ boundaries, so one API batch is saved all-or-nothing.
 """
 
 import psycopg
+from psycopg.rows import dict_row
 
 from src import config
 
@@ -97,6 +98,19 @@ def count_by_label(conn: psycopg.Connection) -> dict[str, int]:
         """
     ).fetchall()
     return {label: count for label, count in rows}
+
+def fetch_samples(conn: psycopg.Connection) -> list[dict]:
+    """All accepted samples in insertion order, as dicts, for export.py."""
+    with conn.cursor(row_factory=dict_row) as cur:
+        cur.execute(
+            """
+            SELECT sample_id, run_id, label, clause_text AS text,
+                   contract_type, tone, length_bucket
+            FROM synthetic_samples
+            ORDER BY sample_id
+            """
+        )
+        return cur.fetchall()
 
 
 # --- rejected_samples (the reject bin) ----------------------------------------

@@ -11,18 +11,14 @@ from pathlib import Path
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_recall_fscore_support
 
 from src import config
+from src.jsonl_io import read_jsonl
 
 
 # --- 1. The exam ---------------------------------------------------------------------
 def load_test_set(path: Path = config.LEDGAR_TEST_PATH) -> tuple[list[str], list[str]]:
     """Read the LEDGAR JSONL file written by ledgar.py into (texts, labels)."""
-    texts, labels = [], []
-    with path.open(encoding="utf-8") as f:
-        for line in f:
-            row = json.loads(line)
-            texts.append(row["text"])
-            labels.append(row["label"])
-    return texts, labels
+    rows = read_jsonl(path)
+    return [row["text"] for row in rows], [row["label"] for row in rows]
 
 
 # --- 2. Marking (pure) -----------------------------------------------------------------
