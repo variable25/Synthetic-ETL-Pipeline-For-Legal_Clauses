@@ -23,3 +23,8 @@ datasets==5.1.0
 
 transformers==5.18.0
 scikit-learn==1.9.1
+
+# --- Serving (inference API) ---
+fastapi==0.142.2
+uvicorn==0.54.0
+httpx==0.28.1     # used by FastAPI's TestClient in the tests
