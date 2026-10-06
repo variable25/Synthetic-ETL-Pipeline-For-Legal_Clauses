@@ -82,8 +82,12 @@ LENGTH_BUCKETS = {
 # --- 6. Generation settings ---------------------------------------------------
 CLAUSES_PER_CALL = 10
 MIN_CLAUSE_CHARS = 40       # shorter than this -> rejected as "too_short"
-PROMPT_VERSION = "v1"       # bump whenever the prompt text changes
+PROMPT_VERSION = "v2"       # bump whenever the prompt text changes
 RANDOM_SEED = 42            # makes the recipe-card shuffle reproducible
+TEMPERATURE = 0.9           # creativity dial: higher = more variety, fewer duplicates
+MAX_COMPLETION_TOKENS = 2500  # output cap per call: a cost seatbelt (~1,800 needed)
+REQUEST_TIMEOUT_S = 60      # give up on one HTTP attempt after this many seconds
+MAX_RETRIES = 5             # SDK retries on rate limits / server errors, with backoff
 
 
 # --- 7. Pricing for the cost guard (verify on OpenAI's pricing page) ----------
