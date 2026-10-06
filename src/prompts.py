@@ -33,7 +33,7 @@ Rules:
 - Write each clause exactly as it would appear inside a signed contract.
 - Do NOT start a clause with a heading, title or clause number.
 - Every clause must clearly be of the requested type and must not drift into other clause types.
-- Make the clauses in one response clearly different from each other in wording and content.
+- Make the clauses in one response genuinely different: vary the sentence structure, opening words, level of detail and specific terms. Never reuse one template and just swap names or places.
 - Use defined terms such as "the Company", "the Supplier" or "the Employee" instead of real names.
 
 Respond with ONLY a JSON object in exactly this shape, with no other text:
