@@ -28,3 +28,6 @@ scikit-learn==1.9.1
 fastapi==0.142.2
 uvicorn==0.54.0
 httpx==0.28.1     # used by FastAPI's TestClient in the tests
+
+# --- Brand assets (dev only: scripts/make_brand_assets.py) ---
+pillow==12.3.0

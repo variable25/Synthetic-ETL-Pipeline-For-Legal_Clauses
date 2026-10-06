@@ -1,6 +1,7 @@
 """Tests for the inference API (offline: a fake classifier replaces Legal-BERT)."""
 
 import pytest
+import json
 from fastapi.testclient import TestClient
 
 from serve.app import MAX_CHARS, create_app, rank_scores
@@ -49,3 +50,12 @@ def test_classify_rejects_too_long_text(client):
 def test_rank_scores_sorts_highest_first():
     ranked = rank_scores(["A", "B", "C"], [0.1, 0.6, 0.3])
     assert [(s.label, s.score) for s in ranked] == [("B", 0.6), ("C", 0.3), ("A", 0.1)]
+
+
+def test_classify_logs_metadata_but_never_the_text(client, capsys):
+    text = "Notice shall be given in writing."
+    client.post("/api/classify", json={"text": text})
+    line = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
+    assert line["label"] == "Termination"
+    assert line["chars"] == len(text)
+    assert text not in json.dumps(line)
