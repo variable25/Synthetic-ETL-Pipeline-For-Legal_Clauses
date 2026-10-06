@@ -1,0 +1,151 @@
+{
+  "macro_f1": 0.8425918357351332,
+  "accuracy": 0.8543729372937293,
+  "n_samples": 2424,
+  "per_class": {
+    "Governing Law": {
+      "precision": 0.9865125240847784,
+      "recall": 0.8797250859106529,
+      "f1": 0.9300635785649409,
+      "support": 582
+    },
+    "Termination": {
+      "precision": 0.6588235294117647,
+      "recall": 0.9491525423728814,
+      "f1": 0.7777777777777778,
+      "support": 118
+    },
+    "Confidentiality": {
+      "precision": 0.949685534591195,
+      "recall": 0.9041916167664671,
+      "f1": 0.9263803680981595,
+      "support": 167
+    },
+    "Indemnification": {
+      "precision": 0.9113924050632911,
+      "recall": 0.9473684210526315,
+      "f1": 0.9290322580645162,
+      "support": 152
+    },
+    "Notices": {
+      "precision": 0.9103139013452914,
+      "recall": 0.9620853080568721,
+      "f1": 0.9354838709677419,
+      "support": 422
+    },
+    "Severability": {
+      "precision": 0.9545454545454546,
+      "recall": 0.5097087378640777,
+      "f1": 0.6645569620253164,
+      "support": 412
+    },
+    "Assignment": {
+      "precision": 0.47745358090185674,
+      "recall": 0.9230769230769231,
+      "f1": 0.6293706293706294,
+      "support": 195
+    },
+    "Entire Agreement": {
+      "precision": 0.9493333333333334,
+      "recall": 0.9468085106382979,
+      "f1": 0.948069241011984,
+      "support": 376
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Governing Law",
+      "Termination",
+      "Confidentiality",
+      "Indemnification",
+      "Notices",
+      "Severability",
+      "Assignment",
+      "Entire Agreement"
+    ],
+    "matrix": [
+      [
+        512,
+        2,
+        1,
+        1,
+        13,
+        3,
+        45,
+        5
+      ],
+      [
+        0,
+        112,
+        0,
+        0,
+        3,
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        2,
+        151,
+        1,
+        1,
+        2,
+        8,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        144,
+        1,
+        4,
+        3,
+        0
+      ],
+      [
+        0,
+        7,
+        0,
+        2,
+        406,
+        0,
+        6,
+        1
+      ],
+      [
+        5,
+        33,
+        1,
+        9,
+        18,
+        210,
+        128,
+        8
+      ],
+      [
+        2,
+        4,
+        2,
+        1,
+        3,
+        0,
+        180,
+        3
+      ],
+      [
+        0,
+        10,
+        4,
+        0,
+        1,
+        1,
+        4,
+        356
+      ]
+    ]
+  },
+  "model": "facebook/bart-large-mnli",
+  "hypothesis_template": "This is a {} clause."
+}

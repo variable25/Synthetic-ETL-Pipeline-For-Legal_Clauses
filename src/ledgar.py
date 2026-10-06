@@ -15,11 +15,13 @@ from pathlib import Path
 from datasets import load_dataset
 
 from src.validate import normalize_text
+from src import config
+from src.validate import normalize_text
 
 DATASET_ID = "coastalcph/lex_glue"
 DATASET_CONFIG = "ledgar"
 SPLIT = "test"
-OUTPUT_PATH = Path(__file__).resolve().parent.parent / "data" / "ledgar_test.jsonl"
+OUTPUT_PATH = config.LEDGAR_TEST_PATH
 
 
 # --- 1. LEDGAR label name -> our label name (exact counterparts only) -----------
