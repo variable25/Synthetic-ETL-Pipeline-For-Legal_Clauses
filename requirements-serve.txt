@@ -1,0 +1,8 @@
+# Serving only (Docker image): CPU torch, no training/LLM/DB libraries.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch==2.14.1+cpu
+numpy==2.5.3
+transformers==5.18.0
+fastapi==0.142.2
+uvicorn==0.54.0
