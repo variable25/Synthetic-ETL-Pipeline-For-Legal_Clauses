@@ -1,0 +1,151 @@
+{
+  "macro_f1": 0.9559104117794506,
+  "accuracy": 0.9686468646864687,
+  "n_samples": 2424,
+  "per_class": {
+    "Governing Law": {
+      "precision": 1.0,
+      "recall": 0.9896907216494846,
+      "f1": 0.9948186528497409,
+      "support": 582
+    },
+    "Termination": {
+      "precision": 0.7928571428571428,
+      "recall": 0.940677966101695,
+      "f1": 0.8604651162790697,
+      "support": 118
+    },
+    "Confidentiality": {
+      "precision": 0.9065934065934066,
+      "recall": 0.9880239520958084,
+      "f1": 0.9455587392550143,
+      "support": 167
+    },
+    "Indemnification": {
+      "precision": 0.9202453987730062,
+      "recall": 0.9868421052631579,
+      "f1": 0.9523809523809523,
+      "support": 152
+    },
+    "Notices": {
+      "precision": 0.9973262032085561,
+      "recall": 0.8838862559241706,
+      "f1": 0.9371859296482412,
+      "support": 422
+    },
+    "Severability": {
+      "precision": 0.9878640776699029,
+      "recall": 0.9878640776699029,
+      "f1": 0.9878640776699029,
+      "support": 412
+    },
+    "Assignment": {
+      "precision": 0.9746192893401016,
+      "recall": 0.9846153846153847,
+      "f1": 0.9795918367346939,
+      "support": 195
+    },
+    "Entire Agreement": {
+      "precision": 0.9842105263157894,
+      "recall": 0.9946808510638298,
+      "f1": 0.9894179894179894,
+      "support": 376
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Governing Law",
+      "Termination",
+      "Confidentiality",
+      "Indemnification",
+      "Notices",
+      "Severability",
+      "Assignment",
+      "Entire Agreement"
+    ],
+    "matrix": [
+      [
+        576,
+        0,
+        2,
+        0,
+        0,
+        3,
+        0,
+        1
+      ],
+      [
+        0,
+        111,
+        3,
+        0,
+        0,
+        0,
+        2,
+        2
+      ],
+      [
+        0,
+        1,
+        165,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        150,
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        26,
+        10,
+        11,
+        373,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        2,
+        0,
+        1,
+        1,
+        407,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        2,
+        1,
+        0,
+        0,
+        192,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        374
+      ]
+    ]
+  },
+  "model": "nlpaueb/legal-bert-base-uncased fine-tuned on synthetic clauses",
+  "n_truncated": 24
+}
