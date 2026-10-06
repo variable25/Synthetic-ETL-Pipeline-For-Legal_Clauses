@@ -10,3 +10,4 @@ models/
 .vscode/
 .DS_Store
 Thumbs.db
+.pytest_cache/
