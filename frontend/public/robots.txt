@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: __SITE_URL__/sitemap.xml
+Sitemap: https://clause-classifier-tc75lmsdvq-ey.a.run.app/sitemap.xml
